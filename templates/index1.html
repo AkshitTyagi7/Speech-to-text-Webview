@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Harinder">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title id="title">Data</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="{{ url_for('static', filename='js/responsivevoice.js') }}"></script>
+
+    <!-- Fontfaces CSS-->
+	<link rel="icon" href="https://secureservercdn.net/160.153.138.177/r10.ddf.myftpupload.com/wp-content/uploads/2021/12/favicon1.svg" sizes="32x32">
+    <link href="{{ url_for('static',filename='css/font-face.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" >
+
+    <!-- Bootstrap CSS-->
+    <link href="{{ url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" >
+
+    <!-- Vendor CSS-->
+   
+    <link href="{{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/wow/animate.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/slick/slick.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/select2/select2.min.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static',filename='vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" >
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static',filename='css/theme.css')}}" rel="stylesheet" >
+	<style>
+	.slider {
+		  -webkit-appearance: none;
+		  width: 90%;
+		  height: 15px;
+		  border-radius: 5px;
+		  background: #d3d3d3;
+		  outline: none;
+		  -webkit-transition: .2s;
+		  transition: opacity .2s;
+		}
+
+		.slider:hover {
+		  opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+		  -webkit-appearance: none;
+		  appearance: none;
+		  width: 25px;
+		  height: 25px;
+		  border-radius: 50%;
+		  background: #ffffff;
+		  cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+		  width: 25px;
+		  height: 25px;
+		  border-radius: 50%;
+		  background: #FFFFFF;
+		  cursor: pointer;
+		}	
+		
+		#save_butt{
+			display:none;
+		
+		}
+		
+		.nav-link{
+			color:#0e67b4;
+			font-size:0.86vw;
+			padding: 0.5rem 0.1rem;
+		
+		}
+		
+		.nav-link:hover{
+			color:#404756;
+			transform: translateY(-8px);
+		}
+		@media screen and (max-width: 800px) {
+			#cl_butt{
+				
+				margin-top:4px;
+				margin-left:38%!important;
+				
+			}
+			.col-md-12.mob_col_12{
+			
+				padding-right:0.1px!important;
+			}
+			#filter_dates,#filter_name,#filter_author,#filter_keyword{
+			
+				width:21%!important;
+				padding-right:0.2px;
+			}
+			.header-desktop{
+				height:90px;
+			
+			}
+		}
+	</style>
+</head>
+
+<body class="animsition" onload="load2()">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+		
+		
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img  style="width:40%" src='static/images/logo.png' alt='simplitiv'>
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+              
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                  <a href="#" style="text-align:center">
+                    <img  style="width:90%" src='static/images/logo.png' alt='simplitiv'>
+                </a>
+            </div>
+          
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                   <div class="section__content section__content--p30" style="padding-left:0">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+						
+                            <form class="form-header" action="" method="POST">
+                                
+                                
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    
+                                  
+                                  
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                         <div class="image">
+                                            <img src="static/images/icons/blank.jpg" alt='users photo'>
+                                        </div>
+                                        <div class="content">
+                                           
+                                        </div>
+                                       <div class="account-dropdown js-dropdown">
+                                          
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="">
+                                                        <i class="zmdi zmdi-account"></i>Password Reset</a>
+                                                </div>
+                                               
+                                              
+                                               
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content" >
+			
+			
+			
+			 <div class="row"  style="padding: 1px 2px 5px 40px;">
+                            <div class="col-md-12">
+			
+							</div>
+						</div>
+			
+                <div class="section__content section__content--p30">
+				
+						<div class="container-fluid">
+                       
+                    
+                      
+					  
+					  <div class="row">
+                           
+							<div class="col-md-12">
+								 
+							  <div class="card">
+							  
+							
+									 <div class="row" style="background: #e5e5e5;">
+                            <div class="col-md-12">
+										<textarea id="read" cols=50 rows=10 onchange="load2()">Speech synthesis is the artificial production of human speech. A computer system used for this purpose is called a speech synthesizer, and can be implemented in software or hardware products. A text-to-speech (TTS) system converts normal language text into speech; other systems render symbolic linguistic representations like phonetic transcriptions into speech.[1] The reverse process is speech recognition.
+
+Synthesized speech can be created by concatenating pieces of recorded speech that are stored in a database. Systems differ in the size of the stored speech units; a system that stores phones or diphones provides the largest output range, but may lack clarity. For specific usage domains, the storage of entire words or sentences allows for high-quality output. Alternatively, a synthesizer can incorporate a model of the vocal tract and other human voice characteristics to create a completely "synthetic" voice output.[2]
+
+The quality of a speech synthesizer is judged by its similarity to the human voice and by its ability to be understood clearly. An intelligible text-to-speech program allows people with visual impairments or reading disabilities to listen to written words on a home computer. Many computer operating systems have included speech synthesizers since the early 1990s.
+
+
+Overview of a typical TTS system
+
+Automatic announcement
+0:44
+A synthetic voice announcing an arriving train in Sweden.
+Problems playing this file? See media help.
+A text-to-speech system (or "engine") is composed of two parts:[3] a front-end and a back-end. The front-end has two major tasks. First, it converts raw text containing symbols like numbers and abbreviations into the equivalent of written-out words. This process is often called text normalization, pre-processing, or tokenization. The front-end then assigns phonetic transcriptions to each word, and divides and marks the text into prosodic units, like phrases, clauses, and sentences. The process of assigning phonetic transcriptions to words is called text-to-phoneme or grapheme-to-phoneme conversion. Phonetic transcriptions and prosody information together make up the symbolic linguistic representation that is output by the front-end. The back-end—often referred to as the synthesizer—then converts the symbolic linguistic representation into sound. In certain systems, this part includes the computation of the target prosody (pitch contour, phoneme durations),[4] which is then imposed on the output speech.</textarea>
+                    </textarea>
+					
+							
+                            </div>
+							
+                        </div>
+						
+							</div>
+							<button class="btn btn-primary" onclick="load2()">Replay</button>	
+							
+                        </div>
+                       
+                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>2021 Simplitiv Research and Insights. All Rights Reserved</p>
+                                </div>
+                            </div>
+                        </div>
+                   
+				   </div>
+				   
+                </div>
+            </div>
+        </div>
+	{% if wel==0%}			
+		<div class="row">
+                            
+                           
+                               
+								
+	
+                           <div style="display:none">
+		<div id="controls" >
+     <button id="recordButton">Record</button>
+     <button id="pauseButton" disabled>Pause</button>
+     <button id="stopButton" disabled>Stop</button>
+    </div>
+    <div id="formats">Format: start recording to see sample rate</div>
+    <p><strong>Recordings:</strong></p>
+    <ol id="recordingsList"></ol>
+	
+	</div>
+							
+                            
+	</div>
+	{% else %}
+	<div style="display:none">
+	  <audio  id="audio" controls>
+	<source src="" type="audio/mp3">
+	</audio>
+	</div>
+{% endif %}
+    </div>
+	
+	
+	
+
+	
+	
+	
+
+
+
+    <!-- Jquery JS-->
+    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js')}}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/popper.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+    <!-- Vendor JS       -->
+    <script src="{{ url_for('static',filename='vendor/slick/slick.min.js')}}">
+    </script>
+    <script src="{{ url_for('static',filename='vendor/wow/wow.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/animsition/animsition.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
+    </script>
+    <script src="{{ url_for('static',filename='vendor/counter-up/jquery.waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/counter-up/jquery.counterup.min.js')}}">
+    </script>
+    <script src="{{ url_for('static',filename='vendor/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/chartjs/Chart.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='vendor/select2/select2.min.js')}}">
+    </script>
+
+    <!-- Main JS-->
+    
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/recorderjs/0.1.0/recorder.js"></script>
+     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	
+</body>
+
+</html>
+<!-- end document-->

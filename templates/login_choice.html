@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="#" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/responsivevoice.js') }}"></script>
+ <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+	<link rel="icon" href="https://secureservercdn.net/160.153.138.177/r10.ddf.myftpupload.com/wp-content/uploads/2021/12/favicon1.svg" sizes="32x32">
+	<link rel="shortcut icon" href="#" />
+    <title>Simplitiv</title>
+<style>
+body {
+
+font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+background:#efefef;
+
+}
+
+
+input[type=text], input[type=password],.form-control {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 30px;
+  letter-spacing: .1rem;
+		  padding-top:10px;
+		  font-weight:400;
+}
+
+label{
+
+	letter-spacing: .1rem;
+		  padding-top:10px;
+		  font-weight:500;
+
+}
+
+
+
+.btn {
+  background: linear-gradient(to bottom, #333 0%, #000000 100%);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 100px;
+}
+
+a {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  text-decoration: none;
+  width: 10%;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+
+.btn:hover {
+  opacity: 1!important;
+  color:#ffffff!important;
+}
+
+.btn:active {
+	 background: linear-gradient(to bottom, #000000 0%, #333 100%);
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 50px;
+  padding-top:20px;
+  background:#ffffff;
+  border-radius:8px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  max-width: 700px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.invalid {
+  color: red;
+}
+
+
+
+.message {
+  text-align: center;
+  background: #f8d7da;
+  color: #000;
+  
+  padding: 20px;
+  width:100%;
+  margin-top: 10px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 600px) {
+    .btn{
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+
+
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+h2{
+			font-size: 25px;
+		  text-transform: uppercase;
+		  letter-spacing: .1rem;
+		  padding-top:10px;
+		  font-weight:bold;
+		  
+		
+		}
+		
+p{
+			color: #989898;
+    font-size: 12px;
+    margin-left: 15px;
+		
+		}
+		
+
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+		}
+	
+
+
+		
+		/* Modal Content */
+		.modal-content {
+		  background:transparent;
+		  margin: auto;
+		  padding: 150px;
+		  border: none;
+		  width:50%;
+		  height: 50%;
+		  
+		}
+
+		/* The Close Button */
+		.close,.close2,.close3,.close4,.close5,.close6,.close7,.close8,.close9 {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus,
+		.close2:hover,
+		.close2:focus,
+		.close3:hover,
+		.close3:focus,
+		.close4:hover,
+		.close4:focus,
+		.close5:hover,
+		.close5:focus,
+		.close6:hover,
+		.close6:focus,
+		.close7:hover,
+		.close7:focus,
+		.close8:hover,
+		.close8:focus,
+		.close9:hover,
+		.close9:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+		.recorder-container {
+  width: 150px;
+  background-color: #e74c3c;
+  display: block;
+  margin: 50px auto 0px auto;
+  border-radius: 100%;
+  box-shadow: 0px 0px 15px 2px #bdc3c7;
+  cursor: default;
+  transition: .3s all ease-in;
+  position: relative;
+}
+.icon-microphone {
+  color: #fff;
+  font-size: 60px;
+  line-height: 150px;
+  display: block;
+  text-align: center;
+  transition: .1s all ease-in;
+  position: relative;
+}
+
+.outer {
+  width: 148px;
+  height: 148px;
+  -webkit-transform: scale(1);
+  border-radius: 100%;
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid #7f8c8d;
+  z-index: -1;
+  transition: 1.5s all ease;
+  -webkit-animation: woong 1.5s infinite;
+}
+
+.outer-2 {
+  width: 150px;
+  height: 150px;
+  -webkit-transform: scale(1);
+  border-radius: 100%;
+  position: absolute;
+  background-color: #bdc3c7;
+  z-index: -1;
+  transition: 1.5s all ease;
+  -webkit-animation: woong-2 1.5s infinite;
+  -webkit-animation-delay: 2.5s;
+}
+
+@-webkit-keyframes woong {
+  0% {
+    -webkit-trasform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(1.8);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes woong-2 {
+  0% {
+    -webkit-transform: scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    -webkit-transform: scale(1.6);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(2);
+    opacity: 0;
+  }
+}
+		
+
+</style>
+</head>
+<body>
+ <div class="content" style="padding: 3rem 0;">
+    
+	<h2 style="text-align: center;"><img style="width:200px" alt='simplitiv' src='static/images/trans.png'></h2>
+	<br>
+	  
+      
+
+{% if aut==1 %}
+<div class="message">
+  <h3 class="invalid">Invalid password</h3>
+ 
+</div>
+<br>
+{% elif aut==2 %}
+<div class="message">
+  <h3 class="invalid">Incorrect username</h3>
+ 
+</div>
+<br>
+ {% endif %}
+ <div class="message" id="alert" style="display:none">
+  <h3 class="invalid" id="alert_text"></h3>
+ 
+</div>
+<form  method="post">
+  
+  <div class="container" style="text-align:center">
+  <h2 style="text-align: center;margin-top:100px">LOGIN</h2>
+  <br>
+  
+    
+    
+    <br>
+    <br>
+   
+    <label>
+     
+	
+	
+    </label>
+  </div>
+</div>
+
+
+</form>
+
+<p style="color:#989898;font-size:12px;margin-left:15px;text-align:center;">2021 Simplitiv Research and Insights. All Rights Reserved</p>
+<div id="myModal" class="modal" >
+			
+            <!-- Modal content -->
+					<div class="modal-content" style="align-items:center;padding:0px;padding-top:150px">
+					
+					<div class="recorder-container">
+    <div class="outer"></div>
+    <div class="outer-2"></div>
+    <div class="icon-microphone"></div>
+</div>
+					
+  
+					
+					</div>
+		<div style="display:none">
+		<div id="controls" >
+     <button id="recordButton">Record</button>
+     <button id="pauseButton" disabled>Pause</button>
+     <button id="stopButton" disabled>Stop</button>
+    </div>
+    <div id="formats">Format: start recording to see sample rate</div>
+    <p><strong>Recordings:</strong></p>
+    <ol id="recordingsList"></ol>
+	
+	</div>
+	<form action="{{url_for('main')}}" id="sec_form"></form>
+
+</div>
+<script>
+
+
+	var ind=0;
+	let fil_voices;
+	fil_voices=[]
+  document.body.addEventListener("mousedown",async function () {
+  console.log('voices',fil_voices)
+
+  if(ind==0){
+  	$('#myModal').show();
+    responsiveVoice.speak('Hi Please say login to start','UK English Male');
+   $('#click').trigger("play");
+   
+   startRecording()
+    await sleep(5000)
+	stopRecording()
+	$('#accept').trigger("play");
+   ind=1;
+   }
+   else{
+   $('#myModal').hide();
+   ind=0
+   stopRecording()
+   
+   }
+})
+
+document.body.onkeyup =async function(e) {
+  if (e.key == " " ||
+      e.code == "Space" ||      
+      e.keyCode == 32      
+  ) {
+     console.log('voices',fil_voices)
+
+  if(ind==0){
+  	$('#myModal').show();
+    responsiveVoice.speak('Hi Please say login to start','UK English Male');
+   
+   $('#click').trigger("play");
+   
+   startRecording()
+    await sleep(5000)
+	stopRecording()
+	$('#accept').trigger("play");
+   ind=1;
+   }
+   else{
+   $('#myModal').hide();
+   ind=0
+   stopRecording()
+   
+   }
+  }
+}
+
+
+
+
+
+
+async function getResponse(r){
+	console.log(r)
+	if(r['choice']==1){
+		
+		
+		 console.log(r)
+		
+		 $('#myModal').show();
+		
+		 
+		await getNextAudio('Starting')
+		$('#click').trigger("play");
+		 
+		
+		 await sleep(2)
+		document.getElementById("sec_form").submit();
+		
+		
+		
+
+
+}
+}
+
+ function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+   }
+   
+   async function getNextAudio(sentence) {
+		 
+	
+		  let audio = new SpeechSynthesisUtterance(sentence);
+		     audio.rate = 1;
+			audio.voice=fil_voices[0]
+			audio.lang='en-GB'
+			console.log('voices lang',audio.lang,audio.voice)
+					  
+		  
+		   window.speechSynthesis.cancel()
+		  window.speechSynthesis.speak(audio);
+			 console.log('played sentence',sentence)
+		  return new Promise(resolve => {
+			
+			audio.onend = resolve;
+		  });
+}
+</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/recorderjs/0.1.0/recorder.js"></script>
+   <script src="/static/js/file.js"></script>
+   
+
+</body>
+</html>
